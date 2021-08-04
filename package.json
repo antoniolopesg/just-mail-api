@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:antoniolopesg/just-mail-api.git",
   "author": "Antonio Lopes <antoniolopesg@protonmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.2.6"
+  }
 }
