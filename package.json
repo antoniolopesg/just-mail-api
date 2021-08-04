@@ -6,7 +6,10 @@
   "author": "Antonio Lopes <antoniolopesg@protonmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
