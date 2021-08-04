@@ -6,6 +6,7 @@
   "author": "Antonio Lopes <antoniolopesg@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "git-commit-msg-linter": "^3.2.6"
+    "git-commit-msg-linter": "^3.2.6",
+    "nodemon": "^2.0.12"
   }
 }
