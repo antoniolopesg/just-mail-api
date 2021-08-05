@@ -9,7 +9,9 @@
     "dev": "nodemon src/index.js",
     "prepare": "husky install",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "yarn lint -- --fix",
+    "test": "jest --noStackTrace --passWithNoTests --runInBand",
+    "test:watch": "yarn test -- --watch"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
