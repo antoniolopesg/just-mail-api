@@ -6,18 +6,20 @@
   "author": "Antonio Lopes <antoniolopesg@protonmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
     "test": "jest --noStackTrace --passWithNoTests --runInBand",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test -- --watch",
+    "start": "cross-env NODE_ENV=production babel-node src/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/node": "^7.14.9",
     "@babel/preset-env": "^7.15.0",
     "@types/jest": "^26.0.24",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
