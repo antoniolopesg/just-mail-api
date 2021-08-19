@@ -1,4 +1,4 @@
-import { models } from '../../../database';
+import { models } from 'database';
 
 class UserController {
   async index(request, response) {
