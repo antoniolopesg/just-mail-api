@@ -2,12 +2,12 @@ require('../../setup-env');
 
 module.exports = {
   development: {
-    use_env_variable: 'POSTGRES_URL'
+    use_env_variable: 'DATABASE_URL'
   },
   test: {
-    use_env_variable: 'POSTGRES_URL'
+    use_env_variable: 'DATABASE_URL'
   },
   production: {
-    use_env_variable: 'POSTGRES_URL'
+    use_env_variable: 'DATABASE_URL'
   }
 };
