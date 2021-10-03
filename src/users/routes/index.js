@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import UserController from '../controllers/UsersController';
+import { UsersController } from '../controllers/UsersController';
+import { SignUpService } from '../services/SignUpService';
 
 const router = Router();
 
-const userController = new UserController();
+const usersController = new UsersController(new SignUpService());
 
-router.post('/', userController.store);
+router.post('/signup', usersController.store.bind(usersController));
 
 export default router;

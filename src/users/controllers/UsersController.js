@@ -1,21 +1,21 @@
-import { models } from 'database';
-const { User } = models;
+export class UsersController {
+  constructor(signupService) {
+    this.signupService = signupService;
+  }
 
-class UserController {
   async store(request, response) {
-    try {
-      const { email, password, firstName, lastName } = request.body;
-      const user = await User.create({
-        email,
-        password,
-        firstName,
-        lastName
-      });
-      return response.status(201).json(user);
-    } catch (err) {
-      return response.status(400).json({ error: err });
-    }
+    const {
+      user: { firstName, email, lastName, password, passwordConfirmation }
+    } = request.body;
+
+    await this.signupService.signup({
+      firstName,
+      lastName,
+      email,
+      password,
+      passwordConfirmation
+    });
+
+    return response.status(201).json({ jwt: 'some jwt token' });
   }
 }
-
-export default UserController;
