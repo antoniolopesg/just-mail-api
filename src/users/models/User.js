@@ -23,6 +23,10 @@ export default (sequelize) => {
           contains: {
             args: ['@justmail.com'],
             msg: 'email must use justmail.com domain'
+          },
+          notEmpty: {
+            args: true,
+            msg: 'email must not be empty'
           }
         }
       },
@@ -51,8 +55,8 @@ export default (sequelize) => {
         allowNull: false,
         validate: {
           len: {
-            args: [3],
-            msg: 'password must contain at least 3 characters'
+            args: [8],
+            msg: 'password must contain at least 8 characters'
           }
         }
       },
