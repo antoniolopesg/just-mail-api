@@ -7,7 +7,7 @@ const { User } = models;
 export class SignUpService {
   async signup({ firstName, email, lastName, password, passwordConfirmation }) {
     if (password !== passwordConfirmation) {
-      throw new HttpException(400, {
+      throw new HttpException(422, {
         errors: {
           passwordConfirmation: [
             'password and passwordConfirmation must be the same'
