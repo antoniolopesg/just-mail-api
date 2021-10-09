@@ -11,6 +11,7 @@
           "database": ["./database"]
         }
       }
-    ]
+    ],
+    ["@babel/plugin-transform-runtime"]
   ]
 }
