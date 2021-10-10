@@ -19,7 +19,10 @@ export default (sequelize) => {
           msg: 'email already in use'
         },
         validate: {
-          isEmail: true,
+          isEmail: {
+            args: [true],
+            msg: 'email is not valid'
+          },
           contains: {
             args: ['@justmail.com'],
             msg: 'email must use justmail.com domain'
@@ -27,6 +30,10 @@ export default (sequelize) => {
           notEmpty: {
             args: true,
             msg: 'email must not be empty'
+          },
+          notNull: {
+            args: [true],
+            msg: 'email is required'
           }
         }
       },
@@ -37,6 +44,10 @@ export default (sequelize) => {
           len: {
             args: [3],
             msg: 'firstName must contain at least 3 characters'
+          },
+          notNull: {
+            args: [true],
+            msg: 'firstName is required'
           }
         }
       },
@@ -47,6 +58,10 @@ export default (sequelize) => {
           len: {
             args: [3],
             msg: 'lastName must contain at least 3 characters'
+          },
+          notNull: {
+            args: [true],
+            msg: 'lastName is required'
           }
         }
       },
@@ -57,6 +72,10 @@ export default (sequelize) => {
           len: {
             args: [8],
             msg: 'password must contain at least 8 characters'
+          },
+          notNull: {
+            args: [true],
+            msg: 'password is required'
           }
         }
       },
