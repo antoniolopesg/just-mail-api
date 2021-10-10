@@ -4,9 +4,8 @@ export class UsersController {
   }
 
   async store(request, response) {
-    const {
-      user: { firstName, email, lastName, password, passwordConfirmation }
-    } = request.body;
+    const { firstName, email, lastName, password, passwordConfirmation } =
+      request.body.user || {};
 
     await this.signupService.signup({
       firstName,
